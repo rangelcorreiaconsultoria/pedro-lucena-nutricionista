@@ -90,3 +90,4 @@ MIT
 
 Pedro Lucena - Nutricionista
 # Site ao vivo!
+Vercel redeployment

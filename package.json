@@ -1,0 +1,17 @@
+{
+  "name": "pedro-lucena-nutricionista",
+  "version": "1.0.0",
+  "description": "Landing page do nutricionista Pedro Lucena",
+  "main": "index.html",
+  "scripts": {
+    "dev": "open index.html",
+    "start": "python -m http.server 3000 || npx http-server -p 3000"
+  },
+  "keywords": [
+    "nutricionista",
+    "saude",
+    "nutricao"
+  ],
+  "author": "Pedro Lucena",
+  "license": "MIT"
+}

@@ -16,7 +16,12 @@ export default function HeroSection() {
           <p className="text-base text-text-secondary mb-10 max-w-sm leading-relaxed">
             Estratégias metabólicas baseadas em evidência. Resultados reais sem dietas restritivas.
           </p>
-          <a href="#contato" className="btn btn-primary">
+          <a
+            href="https://calendar.app.google/MmzzQkmMHmxMB4Zb6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Agendar Consulta
           </a>
         </div>

@@ -16,8 +16,9 @@ const services = [
     title: 'Consulta Presencial',
     description:
       'Experiência completa em nosso consultório em Recife, incluindo avaliação física detalhada e bioimpedância.',
-    href: '#contato',
+    href: 'https://calendar.app.google/MmzzQkmMHmxMB4Zb6',
     linkText: 'Agendar em Recife',
+    isExternal: true,
   },
   {
     icon: '⚡',

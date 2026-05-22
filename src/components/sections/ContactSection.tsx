@@ -55,7 +55,7 @@ export default function ContactSection() {
 
           {/* Right - CTA Button */}
           <a
-            href="https://api.whatsapp.com/send/?phone=5581995124423&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+a+consulta+on-line."
+            href="https://calendar.app.google/MmzzQkmMHmxMB4Zb6"
             target="_blank"
             rel="noopener noreferrer"
             className="px-16 py-6 bg-brand-dark-gray text-white rounded-full font-bold text-sm uppercase tracking-widest shadow-xl hover:bg-brand-orange transition-all shrink-0"

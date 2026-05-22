@@ -7,6 +7,7 @@ interface ServiceCardProps {
   description: string;
   href: string;
   linkText: string;
+  isExternal?: boolean;
 }
 
 export default function ServiceCard({
@@ -15,10 +16,10 @@ export default function ServiceCard({
   description,
   href,
   linkText,
+  isExternal = false,
 }: ServiceCardProps) {
-  return (
-    <Link href={href}>
-      <div className="bg-white p-12 border border-brand-gray/30 rounded-2xl flex flex-col group h-full transition-all duration-300 hover:bg-brand-dark-gray hover:text-white hover:border-brand-dark-gray hover:shadow-lg cursor-pointer">
+  const CardContent = () => (
+    <div className="bg-white p-12 border border-brand-gray/30 rounded-2xl flex flex-col group h-full transition-all duration-300 hover:bg-brand-dark-gray hover:text-white hover:border-brand-dark-gray hover:shadow-lg cursor-pointer">
         <div className="mb-12 text-4xl">{icon}</div>
         <h3 className="text-3xl font-bold mb-6 group-hover:text-white transition-colors">
           {title}
@@ -42,6 +43,19 @@ export default function ServiceCard({
           </svg>
         </div>
       </div>
+    );
+
+  if (isExternal) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <CardContent />
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href}>
+      <CardContent />
     </Link>
   );
 }

@@ -23,8 +23,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'display': ['Space Grotesk', 'sans-serif'],
+        'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        'display': ['var(--font-space-grotesk)', 'sans-serif'],
       },
       borderRadius: {
         'apple': '1.25rem',

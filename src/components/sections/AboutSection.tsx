@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function AboutSection() {
   return (
     <section id="sobre" className="md:py-24 py-16 bg-white">
@@ -37,9 +39,11 @@ export default function AboutSection() {
           {/* Right - Image */}
           <div className="relative">
             <div className="aspect-square rounded-apple overflow-hidden shadow-2xl relative group">
-              <img
+              <Image
                 alt="Pedro Lucena - Nutricionista Especialista"
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop"
+                width={400}
+                height={400}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-brand-orange/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

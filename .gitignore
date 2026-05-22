@@ -5,7 +5,6 @@
 
 # Dependencies
 node_modules/
-package-lock.json
 yarn.lock
 
 # IDE
@@ -16,7 +15,7 @@ yarn.lock
 *~
 .DS_Store
 
-# Build output
+# Build output (but keep .next for Vercel deployment)
 dist/
 build/
 

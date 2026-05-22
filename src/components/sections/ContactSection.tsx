@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from '@/hooks/useForm';
+import SchedulingModal from '@/components/common/SchedulingModal';
 
 interface ContactFormData {
   name: string;
@@ -10,6 +12,7 @@ interface ContactFormData {
 }
 
 export default function ContactSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const {
     values,
     errors,
@@ -33,7 +36,9 @@ export default function ContactSection() {
   );
 
   return (
-    <section id="contato" className="md:py-20 py-16 bg-white border-t border-brand-gray/10">
+    <>
+      <SchedulingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <section id="contato" className="md:py-20 py-16 bg-white border-t border-brand-gray/10">
       <div className="container">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between md:gap-12 gap-8">
           {/* Left - Heading */}
@@ -54,14 +59,12 @@ export default function ContactSection() {
           </div>
 
           {/* Right - CTA Button */}
-          <a
-            href="https://calendar.app.google/MmzzQkmMHmxMB4Zb6"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="px-16 py-6 bg-brand-dark-gray text-white rounded-full font-bold text-sm uppercase tracking-widest shadow-xl hover:bg-brand-orange transition-all shrink-0"
           >
             Iniciar Consultoria
-          </a>
+          </button>
         </div>
 
         {/* Form Section (Hidden for now, can be enabled) */}
@@ -128,5 +131,6 @@ export default function ContactSection() {
         */}
       </div>
     </section>
+    </>
   );
 }

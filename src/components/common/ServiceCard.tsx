@@ -8,6 +8,7 @@ interface ServiceCardProps {
   href: string;
   linkText: string;
   isExternal?: boolean;
+  onClick?: () => void;
 }
 
 export default function ServiceCard({
@@ -17,6 +18,7 @@ export default function ServiceCard({
   href,
   linkText,
   isExternal = false,
+  onClick,
 }: ServiceCardProps) {
   const CardContent = () => (
     <div className="bg-white p-12 border border-brand-gray/30 rounded-2xl flex flex-col group h-full transition-all duration-300 hover:bg-brand-dark-gray hover:text-white hover:border-brand-dark-gray hover:shadow-lg cursor-pointer">
@@ -44,6 +46,14 @@ export default function ServiceCard({
         </div>
       </div>
     );
+
+  if (onClick) {
+    return (
+      <button onClick={onClick} className="block w-full text-left">
+        <CardContent />
+      </button>
+    );
+  }
 
   if (isExternal) {
     return (

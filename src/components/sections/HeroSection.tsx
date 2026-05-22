@@ -1,8 +1,14 @@
 'use client';
 
+import { useState } from 'react';
+import SchedulingModal from '@/components/common/SchedulingModal';
+
 export default function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section id="inicio" className="relative min-h-[85vh] flex items-center pt-44 pb-12 md:pt-44 md:pb-12 overflow-hidden bg-brand-gray">
+    <>
+      <SchedulingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <section id="inicio" className="relative min-h-[85vh] flex items-center pt-44 pb-12 md:pt-44 md:pb-12 overflow-hidden bg-brand-gray">
       {/* Background Gradient Circle */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl" />
 
@@ -16,14 +22,12 @@ export default function HeroSection() {
           <p className="text-base text-text-secondary mb-10 max-w-sm leading-relaxed">
             Estratégias metabólicas baseadas em evidência. Resultados reais sem dietas restritivas.
           </p>
-          <a
-            href="https://calendar.app.google/MmzzQkmMHmxMB4Zb6"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="btn btn-primary"
           >
             Agendar Consulta
-          </a>
+          </button>
         </div>
 
         {/* Right - Video */}
@@ -55,5 +59,6 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

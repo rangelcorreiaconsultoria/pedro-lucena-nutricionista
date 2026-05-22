@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import ServiceCard from '@/components/common/ServiceCard';
+import SchedulingModal from '@/components/common/SchedulingModal';
 
 const services = [
   {
@@ -16,9 +18,8 @@ const services = [
     title: 'Consulta Presencial',
     description:
       'Experiência completa em nosso consultório em Recife, incluindo avaliação física detalhada e bioimpedância.',
-    href: 'https://calendar.app.google/MmzzQkmMHmxMB4Zb6',
+    href: '#',
     linkText: 'Agendar em Recife',
-    isExternal: true,
   },
   {
     icon: '⚡',
@@ -31,8 +32,12 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section id="servicos" className="lg:py-24 py-16 bg-brand-gray">
+    <>
+      <SchedulingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <section id="servicos" className="lg:py-24 py-16 bg-brand-gray">
       <div className="container">
         {/* Header */}
         <div className="grid lg:grid-cols-12 md:gap-12 gap-6 items-end md:mb-16 mb-8">
@@ -51,10 +56,19 @@ export default function ServicesSection() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+            <ServiceCard
+              key={index}
+              {...service}
+              onClick={
+                service.linkText === 'Agendar em Recife'
+                  ? () => setIsModalOpen(true)
+                  : undefined
+              }
+            />
           ))}
         </div>
       </div>
     </section>
+    </>
   );
 }
